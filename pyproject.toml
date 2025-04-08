@@ -1,0 +1,32 @@
+[project]
+name = "dbt-sqlx"
+version = "0.1.23"
+description = "CLI for converting DBT SQL models into multiple dialects."
+authors = [{ name = "Nikhil Suthar", email = "n.suthar.tech@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10.0,<3.12"
+license = "MIT"
+dependencies = [
+    "langchain (>=0.3.22,<0.4.0)",
+    "langchain-openai (>=0.3.11,<0.4.0)",
+    "langchain-anthropic (>=0.3.10,<0.4.0)",
+    "langchain-google-genai (>=2.1.2,<3.0.0)",
+    "langchain-aws (>=0.2.18,<0.3.0)",
+    "langchain-mistralai (>=0.2.10,<0.3.0)",
+    "langchain-groq (>=0.3.2,<0.4.0)",
+    "langchain-ollama (>=0.3.0,<0.4.0)",
+    "click (>=8.1.7,<9.0.0)",
+    "python-dotenv (>=0.10.2,<2.0.0)",
+    "langsmith (>=0.3.20,<0.4.0)"
+]
+
+[project.urls]
+repository = "https://github.com/NikhilSuthar/dbt-sqlx.git"
+"Documentation" = "https://github.com/NikhilSuthar/dbt-sqlx/blob/main/README.md"
+
+[project.scripts]
+dbt-sqlx = "dbt_sqlx.cli:cli"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

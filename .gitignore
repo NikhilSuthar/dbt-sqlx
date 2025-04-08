@@ -1,0 +1,28 @@
+# Byte-compiled / cached files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.env/
+.venv/
+PYPI_TOKEN
+
+# DBT-related
+dbt_packages/
+logs/
+target/
+
+# Config files
+.env
+*.dbt
+
+#Build files
+build/
+dist/
+src/dbt_sqlx.egg-info
+src/dbt_sqlx.egg-info/*
+
+#Test files
+tests
+tests/*
