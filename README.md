@@ -12,7 +12,7 @@ Tired of rewriting SQL logic every time your data platform changes?
 
 Whether you're:
 
-- Migrating from one SQL type to Another for exmple Snowflake to Redshift  
+- Migrating from one SQL type to another type like Snowflake to Redshift and many more
 - Porting models between versions such as oracle 11g to oracle 19c. 
 - Maintaining compatibility across clouds  
 
@@ -180,7 +180,7 @@ dbt-sqlx config --llm-provider your-llm-provider --llm-model your-llm-model --ap
 
 ```bash
 # Example 
-dbt-sqlx config --llm-provider "Groq" --llm-model "llama-3.3-70b-specdec"  --api-key "gsk_ob**********LhiB"
+dbt-sqlx config --llm-provider Groq --llm-model llama-3.3-70b-specdec  --api-key ] gsk_ob**********LhiB
 ```
 
 
@@ -277,7 +277,8 @@ GROUP BY customer_id;
 
 
 Sample Configuration
-Below is sample configuration of provider and models:
+Below are some sample configuration of LLM providers and models:
+
 
 **Groq**
 ```
@@ -313,7 +314,7 @@ LLM_Provider_Key = 'a2**************************ya0'
 
 ## 📄 License
 
-This project is licensed under the **MIT License** – see the [LICENSE](./VERSION) file for details.
+This project is licensed under the **MIT License** – see the [LICENSE](https://github.com/NikhilSuthar/dbt-sqlx/blob/main/LICENSE) file for details.
 
 
 ## 📬 Contact
