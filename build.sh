@@ -6,9 +6,6 @@ set -e
 VERSION=$(grep '^test=' VERSION | cut -d'=' -f2 | xargs)
 PROD_VERSION=$(grep '^prod=' VERSION | cut -d'=' -f2 | xargs)
 
-# Token fallback (use env if available, otherwise hardcoded)
-TEST_TOKEN=${TEST_PYPI_TOKEN:-}
-PROD_TOKEN=${PYPI_TOKEN:-pypi-xxxxxxxxxxxxxxxx--prodTokenHere}
 
 # Choose environment
 if [ "$1" == "--test" ]; then
@@ -26,14 +23,6 @@ elif [ "$1" == "--prod" ]; then
   echo "__version__ = \"$PROD_VERSION\"" > ./src/dbt_sqlx/__init__.py
   poetry build
   poetry publish -u __token__ -p "$PROD_TOKEN"
-elif [ "$1" == "--test-patch" ]; then
-  TEST_TOKEN=$(grep '^test-pypi=' PYPI_TOKEN | cut -d'=' -f2 | xargs)
-  VERSION='patch'
-  echo "🔧 Building and publishing to TestPyPI (version $VERSION)..."
-  poetry version "$VERSION"
-  echo "__version__ = \"$VERSION\"" > ./src/dbt_sqlx/__init__.py
-  poetry build
-  poetry publish -r dbt-sqlx-test -u __token__ -p "$TEST_TOKEN"
 else
   echo "❌ Usage: ./build.sh --test or ./build.sh --prod"
   exit 1
