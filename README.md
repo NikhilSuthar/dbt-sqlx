@@ -204,6 +204,11 @@ dbt-sqlx transpile --target-sql oracle --dbt-project /path/to/dbt-project
 dbt-sqlx transpile --target-sql snowflake --dbt-project /path/to/project --models model1,model2
 ```
 
+## 🎥 Demo
+
+Check out dbt-sqlx in action! 👇
+
+[![dbt-sqlx in Action](http://i.ytimg.com/vi/tFpBSFq7OO8/hqdefault.jpg)](https://www.youtube.com/watch?v=tFpBSFq7OO8)
 
 
 ## 🎯 Use Cases
@@ -276,7 +281,8 @@ GROUP BY customer_id;
 ```
 
 
-Sample Configuration
+## Sample Configuration
+
 Below are some sample configuration of LLM providers and models:
 
 
