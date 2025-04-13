@@ -307,8 +307,6 @@ LLM_Name = 'mistral-small-latest'
 LLM_Provider_Key = 'a2**************************ya0'
 ```
 
-[![YouTube](http://i.ytimg.com/vi/tFpBSFq7OO8/hqdefault.jpg)](https://www.youtube.com/watch?v=tFpBSFq7OO8)
-
 
 > **⚠️ Important Notes**
 >- `dbt-sqlx` uses LLM models — do not use if your code is under strict data security policies.
