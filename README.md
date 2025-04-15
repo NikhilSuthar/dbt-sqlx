@@ -22,11 +22,12 @@ Whether you're:
 
 ## ✨ Features
 
+✅ Translate dbt models across supported SQL dialects.
 ✅ Translate dbt models across supported SQL dialects  
 ✅ Retains dbt Jinja templating: `{{ ref('...') }}`, `{{ var('...') }}`  
 ✅ Bulk model conversion support  
 ✅ Intuitive CLI: `dbt run -m`-like syntax  
-✅ LLM-powered translation via `OpenAI`, `Groq`, `Anthropic`, etc.  
+✅ LLM-powered translation via `OpenAI`, `Groq`, `Google`, etc.  
 ✅ Fully configurable through CLI or `.env`  
 ✅ SQL version-aware translation (e.g., Oracle 11g vs 19c)  
 ✅ Auto-detects source dialect from dbt metadata
