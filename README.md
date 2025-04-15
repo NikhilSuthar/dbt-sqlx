@@ -22,8 +22,7 @@ Whether you're:
 
 ## ✨ Features
 
-✅ Translate dbt models across popular SQL dialects:  
- `Snowflake`, `Redshift`, `PostgreSQL`, `MySQL`, `Oracle`, `BigQuery`, `Spark-SQL`, `SQL Server`  
+✅ Translate dbt models across supported SQL dialects  
 ✅ Retains dbt Jinja templating: `{{ ref('...') }}`, `{{ var('...') }}`  
 ✅ Bulk model conversion support  
 ✅ Intuitive CLI: `dbt run -m`-like syntax  
@@ -312,6 +311,20 @@ LLM_Provider = "MistralAI"
 LLM_Name = 'mistral-small-latest'
 LLM_Provider_Key = 'a2**************************ya0'
 ```
+
+## 🧪 Supported Dialects (so far)
+Here’s what’s currently supported:
+
+* Redshift
+* Snowflake
+* BigQuery
+* Postgres
+* MySQL
+* Oracle
+* Spark-SQL
+* SQL-Server
+* Db2
+* ClickHouse
 
 
 > **⚠️ Important Notes**
