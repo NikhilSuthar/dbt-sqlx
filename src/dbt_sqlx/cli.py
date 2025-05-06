@@ -58,6 +58,8 @@ def transpile(target_sql,target_sql_version =None, source_sql=None, dbt_project=
         models_to_be_convert = [str(x) for x in all_models if x.rsplit("/",1)[1] in input_models]
     # click.echo(f"All models {all_models} and processing {models_to_be_convert} and input models {models}")
     
+    if len(models_to_be_convert) == 0:
+        raise click.ClickException(click.echo(click.style(f"None of the models found in the DBT project. Please check the model name and try again.",fg="red", bold=True)))
     click.echo(click.style(f"\n Total {str(len(all_models))} dbt models found. Converting {len(models_to_be_convert)} models.", fg="blue", bold=True))
     if target_sql_version:
         click.echo(click.style(f"\n Translating the Model into {str(target_sql).title()} with version {target_sql_version}", fg="blue", bold=True))

@@ -210,6 +210,10 @@ Check out dbt-sqlx in action! 👇
 
 [![dbt-sqlx in Action](http://i.ytimg.com/vi/tFpBSFq7OO8/hqdefault.jpg)](https://www.youtube.com/watch?v=tFpBSFq7OO8)
 
+## Blog
+Check out `dbt-sqlx` in blog! 👇
+
+[GenAI + dbt = dbt-sqlx: The Easiest Way to Switch SQL Dialects 💫](https://medium.com/data-engineer-things/genai-dbt-dbt-sqlx-the-easiest-way-to-switch-sql-dialects-999bd59e60ce)
 
 ## 🎯 Use Cases
 
@@ -314,7 +318,7 @@ LLM_Provider_Key = 'a2**************************ya0'
 ```
 
 ## 🧪 Supported Dialects (so far)
-Here’s what’s currently supported:
+Here’s what’s currently supported dialect, use it as `--target-sql` values
 
 * Redshift
 * Snowflake
@@ -327,7 +331,16 @@ Here’s what’s currently supported:
 * Db2
 * ClickHouse
 * DuckDB
-
+* Databrick-Sql
+* Trino
+* Vertica
+* Athena
+* Presto
+* Google-Alloy-DB
+* MariaDB
+* Presto
+* Apache-Hive
+* SQLite
 
 > **⚠️ Important Notes**
 >- `dbt-sqlx` uses LLM models — do not use if your code is under strict data security policies.
