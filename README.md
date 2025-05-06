@@ -326,6 +326,7 @@ Here’s what’s currently supported:
 * SQL-Server
 * Db2
 * ClickHouse
+* DuckDB
 
 
 > **⚠️ Important Notes**
