@@ -1,6 +1,6 @@
 [project]
 name = "dbt-sqlx"
-version = "1.2.2"
+version = "1.3.0"
 description = "CLI for converting DBT SQL models into multiple dialects."
 authors = [{ name = "Nikhil Suthar", email = "n.suthar.tech@gmail.com" }]
 readme = "README.md"
