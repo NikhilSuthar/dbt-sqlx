@@ -52,20 +52,20 @@ NEW_VERSION=$(bump_version "$CURRENT_VERSION" "$BUMP_TYPE")
 
 # Update version in __init__.py
 update_init_py() {
-  echo "__version__ = \"$CURRENT_VERSION\"" > ./src/dbt_sqlx/__init__.py
+  echo "__version__ = \"$NEW_VERSION\"" > ./src/dbt_sqlx/__init__.py
 }
 
 # Set Git branch and tag
 if [[ "$TARGET_ENV" == "test" ]]; then
-  RELEASE_BRANCH="${CURRENT_VERSION}-pre-live"
-  GIT_TAG="v${CURRENT_VERSION}-test"
+  RELEASE_BRANCH="${NEW_VERSION}-pre-live"
+  GIT_TAG="v${NEW_VERSION}-test"
   TEST_TOKEN=$(grep '^test-pypi=' PYPI_TOKEN | cut -d'=' -f2 | xargs)
 
   echo "🔧 Switching to test release branch: $RELEASE_BRANCH"
-  git checkout -B "$RELEASE_BRANCH"
+  git checkout -b "$RELEASE_BRANCH"
 
-  echo "🔧 Publishing to TestPyPI → $CURRENT_VERSION"
-  poetry version "$CURRENT_VERSION"
+  echo "🔧 Publishing to TestPyPI → $NEW_VERSION"
+  poetry version "$NEW_VERSION"
   update_init_py
   poetry build
   poetry publish -r dbt-sqlx-test -u __token__ -p "$TEST_TOKEN"
@@ -73,13 +73,14 @@ if [[ "$TARGET_ENV" == "test" ]]; then
   echo "✅ Bumped test version to $NEW_VERSION"
 
 elif [[ "$TARGET_ENV" == "prod" ]]; then
-  RELEASE_BRANCH="main"
-  GIT_TAG="v${CURRENT_VERSION}"
+  RELEASE_BRANCH="${NEW_VERSION}-live"
+  GIT_TAG="v${NEW_VERSION}"
   PROD_TOKEN=$(grep '^prod-pypi=' PYPI_TOKEN | cut -d'=' -f2 | xargs)
 
-  echo "🚀 Publishing to PyPI → $CURRENT_VERSION"
-  git checkout "$RELEASE_BRANCH"
-  poetry version "$CURRENT_VERSION"
+  echo "🚀 Publishing to PyPI → $NEW_VERSION"
+  echo "🔧 Switching to new release branch: $RELEASE_BRANCH"
+  git checkout -b "$RELEASE_BRANCH"
+  poetry version "$NEW_VERSION"
   update_init_py
   poetry build
   poetry publish -u __token__ -p "$PROD_TOKEN"
